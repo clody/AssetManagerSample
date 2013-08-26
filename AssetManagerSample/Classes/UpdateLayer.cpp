@@ -58,7 +58,6 @@ UpdateLayer::~UpdateLayer()
     stopAllActions();
     unscheduleAllSelectors();
     
-    // 어셋메니저 초기화
     if ( NULL != m_pAssetsManager )
     {
         CC_SAFE_DELETE ( m_pAssetsManager );
@@ -248,7 +247,6 @@ void UpdateLayer::onUpdateProgress(float fPercent)
     updateProgressLabel ( "uncompressing...", (int)fPercent );
 }
 
-// 다운로드 및 업데이트가 모두 완료되면 호출됨.
 void UpdateLayer::onSuccess()
 {
     updateProgressLabel ( "done", 100 );
